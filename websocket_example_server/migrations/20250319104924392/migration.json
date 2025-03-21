@@ -1,0 +1,57 @@
+{
+  "actions": [
+    {
+      "type": "alterTable",
+      "alterTable": {
+        "name": "my_message",
+        "schema": "public",
+        "addColumns": [
+          {
+            "name": "imageUrl",
+            "columnType": 5,
+            "isNullable": true,
+            "dartType": "dart:typed_data:ByteData?"
+          }
+        ],
+        "deleteColumns": [
+          "imageUrl"
+        ],
+        "modifyColumns": [
+          {
+            "columnName": "text",
+            "addNullable": true,
+            "removeNullable": false,
+            "changeDefault": false
+          }
+        ],
+        "addIndexes": [],
+        "deleteIndexes": [],
+        "addForeignKeys": [],
+        "deleteForeignKeys": [],
+        "warnings": [
+          {
+            "type": "columnDropped",
+            "message": "Column imageUrl of table my_message is modified in a way that it must be deleted and recreated.",
+            "table": "my_message",
+            "columns": [
+              "imageUrl"
+            ],
+            "destrucive": true
+          }
+        ]
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "type": "columnDropped",
+      "message": "Column imageUrl of table my_message is modified in a way that it must be deleted and recreated.",
+      "table": "my_message",
+      "columns": [
+        "imageUrl"
+      ],
+      "destrucive": true
+    }
+  ],
+  "migrationApiVersion": 1
+}

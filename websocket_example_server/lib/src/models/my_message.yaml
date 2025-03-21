@@ -1,0 +1,7 @@
+class: MyMessage
+table: my_message
+fields:
+  text: String?
+  senderId: String
+  receiverId: String
+  imageUrl: List<int>?

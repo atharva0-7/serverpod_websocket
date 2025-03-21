@@ -1,0 +1,7 @@
+class: MyUser
+table: my_user
+fields:
+  uid: String
+  email: String
+  name: String
+  createdAt: DateTime

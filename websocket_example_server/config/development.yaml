@@ -1,0 +1,41 @@
+# This is the configuration file for your local development environment. By
+# default, it runs a single server on port 8080. To set up your server, you will
+# need to add the name of the database you are connecting to and the user name.
+# The password for the database is stored in the config/passwords.yaml.
+#
+# When running your server locally, the server ports are the same as the public
+# facing ports.
+
+# Configuration for the main API server.
+apiServer:
+  port: 8080
+  publicHost: 4d34-103-176-134-214.ngrok-free.app  # Change this to your Ngrok URL
+  publicPort: 443  # Ngrok uses HTTPS, so set this to 443
+  publicScheme: https  # Use HTTPS instead of HTTP
+
+# Configuration for the Insights server.
+insightsServer:
+  port: 8081
+  publicHost: 4d34-103-176-134-214.ngrok-free.app  # Same Ngrok URL
+  publicPort: 443
+  publicScheme: https
+
+# Configuration for the web server.
+webServer:
+  port: 8082
+  publicHost: 4d34-103-176-134-214.ngrok-free.app  # Same Ngrok URL
+  publicPort: 443
+  publicScheme: https
+
+# This is the database setup for your server.
+database:
+  host: localhost
+  port: 5432
+  name: websocket_example
+  user: postgres
+
+# This is the setup for Redis.
+redis:
+  enabled: false
+  host: localhost
+  port: 8091

@@ -1,0 +1,44 @@
+services:
+  # Development services
+  postgres:
+    image: postgres:16.3
+    ports:
+      - "8090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: websocket_example
+      POSTGRES_PASSWORD: "rF9LaIYT1_gTj0oP4_kBiRAnmzualUzi"
+    volumes:
+      - websocket_example_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6.2.6
+    ports:
+      - "8091:6379"
+    command: redis-server --requirepass "C-WGA-O78iuPZw5dcyeZECBIuoCf2Tu3"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+  # Test services
+  postgres_test:
+    image: postgres:16.3
+    ports:
+      - "9090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: websocket_example_test
+      POSTGRES_PASSWORD: "loAUUGip-QtndXoaB006vtccTX7yuNGc"
+    volumes:
+      - websocket_example_test_data:/var/lib/postgresql/data
+
+  redis_test:
+    image: redis:6.2.6
+    ports:
+      - "9091:6379"
+    command: redis-server --requirepass "-Zcuir6i8_Rvvn5bokOCZtmw1WR4D9Fs"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+volumes:
+  websocket_example_data:
+  websocket_example_test_data:
