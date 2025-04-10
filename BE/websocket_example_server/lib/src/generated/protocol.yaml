@@ -1,0 +1,10 @@
+auth:
+  - verifyGoogleSignIn:
+  - getAllUsers:
+chat:
+  - echoStream:
+  - subscribe:
+  - uploadImage:
+  - fetchImage:
+  - getMessageById:
+  - getChatHistory:
